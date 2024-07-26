@@ -1,0 +1,17 @@
+.buyer{
+    background-color:rgb(103, 102, 102);
+    color: white;
+    margin: 10px;
+    align-items: center;
+    
+}
+.product{
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    padding-left: 5rem;
+    justify-content: space-between;
+}
+.product span{
+    margin-bottom: 10px;
+}

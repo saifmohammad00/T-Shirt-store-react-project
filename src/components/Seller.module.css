@@ -1,0 +1,12 @@
+.seller{
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(47, 164, 218);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.addbtn{
+    height: 50px;
+    margin: 50px 50px 0px 0px;
+}

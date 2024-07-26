@@ -1,0 +1,15 @@
+.cart button{
+    background-color: black;
+    width: 10rem;
+    font-size: 2rem;
+    padding: 10px;
+    color: white;
+    margin: 10px;
+    border-radius: 10px;
+}
+.cart{
+    text-align: right;
+}
+span{
+    margin: 5px;
+}
