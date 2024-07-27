@@ -3,14 +3,18 @@ import ReactDom from "react-dom";
 import classes from "./Cartbox.module.css";
 import Context from "../../store/context";
 import CartItem from "./CartItem";
-
+import axios from "axios";
+const url='https://crudcrud.com/api/a8eacf66a9b54a43ad8ca0738eeff9d5';
 const Cartbox = (props) => {
     const overlay = document.getElementById("overlay");
     const conCtx = useContext(Context);
-    const cartItemAddHandler=(item)=>{
-          conCtx.addItem(item);
-    }
-    const cartItemRemoveHandler=(id)=>{
+
+    const cartItemRemoveHandler=async(id)=>{
+         const x= await axios.get(`${url}/cart`);
+         const y=x.data.find((item)=>item.id===id);
+         if(y){
+         const z=await axios.delete(`${url}/cart/${y._id}`);
+         }
          conCtx.removeItem(id);
     }
     const listItems = conCtx.items.map((item) => {
@@ -24,7 +28,6 @@ const Cartbox = (props) => {
             small={item.small}
             item={item}
             onRemove={cartItemRemoveHandler.bind(null, item.id)}
-            onAdd={cartItemAddHandler.bind(null, item)}
         />
     })
     const handlebutton = (event) => {

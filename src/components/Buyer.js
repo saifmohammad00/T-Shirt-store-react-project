@@ -5,6 +5,9 @@ const Buyer = (props) => {
     const abc=(val)=>{
         props.preserveVal(val);
      }
+     const handledelete=(id)=>{
+        props.delete(id);
+     }
     return <div className={classes.buyer}>
         {props.addProduct.map((item) => {
             return <div className={classes.product} key={item.id}>
@@ -19,6 +22,7 @@ const Buyer = (props) => {
                     medium={item.medium}
                     small={item.small}
                     ChangeVal={abc}
+                    delete={handledelete}
                 />
             </div>
         })}
